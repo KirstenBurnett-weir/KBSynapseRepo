@@ -80,6 +80,9 @@
 				"defaultValue": "kirsten.burnett@mail.weir"
 			}
 		},
+		"folder": {
+			"name": "Development Pipelines"
+		},
 		"annotations": [],
 		"lastPublishTime": "2020-11-23T11:59:03Z"
 	},
