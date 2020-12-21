@@ -1,0 +1,6 @@
+{
+	"name": "KBSelfhostedIR",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

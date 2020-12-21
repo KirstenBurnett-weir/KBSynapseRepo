@@ -1,0 +1,28 @@
+{
+	"name": "Trigger 1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Pipeline 1",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"EmailTo": "kirsten.burnett@mail.weir"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Week",
+				"interval": 15,
+				"startTime": "2020-11-23T12:35:00Z",
+				"endTime": "2020-11-24T13:13:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
