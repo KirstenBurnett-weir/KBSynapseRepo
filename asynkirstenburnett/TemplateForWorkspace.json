@@ -103,8 +103,7 @@
 								"type": "IntegrationRuntimeReference"
 							},
 							"method": "POST",
-							"headers": {},
-							"body": {}
+							"headers": {}
 						}
 					},
 					{
@@ -125,6 +124,15 @@
 					},
 					{
 						"name": "Wait1_copy1",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 1
+						}
+					},
+					{
+						"name": "Wait1_copy1_copy1",
 						"type": "Wait",
 						"dependsOn": [],
 						"userProperties": [],
