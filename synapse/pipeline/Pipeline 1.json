@@ -43,7 +43,7 @@
 					{
 						"activity": "Wait1_copy1",
 						"dependencyConditions": [
-							"Succeeded"
+							"Failed"
 						]
 					}
 				],
@@ -88,12 +88,76 @@
 				"typeProperties": {
 					"waitTimeInSeconds": 1
 				}
+			},
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Wait1_copy1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": true,
+					"secureInput": true
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://api.sendgrid.com/v3/mail/send",
+					"connectVia": {
+						"referenceName": "AutoResolveIntegrationRuntime",
+						"type": "IntegrationRuntimeReference"
+					},
+					"method": "POST",
+					"headers": {
+						"Authorization": "Bearer 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",
+						"Content-Type": "application/json"
+					},
+					"body": {
+						"personalizations": [
+							{
+								"to": [
+									{
+										"email": "kirsten.burnett@mail.weir",
+										"name": "kirsten.burnett"
+									}
+								],
+								"subject": "Hello, World!"
+							}
+						],
+						"from": {
+							"email": "noreply@johndoe.com",
+							"name": "John Doe"
+						},
+						"reply_to": {
+							"email": "noreply@johndoe.com",
+							"name": "John Doe"
+						},
+						"content": [
+							{
+								"type": "text/plain",
+								"value": "synapse error email"
+							}
+						]
+					}
+				}
 			}
 		],
 		"parameters": {
 			"EmailTo": {
 				"type": "string",
 				"defaultValue": "kirsten.burnett@mail.weir"
+			}
+		},
+		"variables": {
+			"test": {
+				"type": "String"
 			}
 		},
 		"folder": {
